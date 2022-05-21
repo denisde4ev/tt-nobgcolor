@@ -50,8 +50,9 @@ type typer struct {
 func NewTyper(scr tcell.Screen, fgcol, bgcol, hicol, hicol2, hicol3, errcol tcell.Color) *typer {
 	var tty io.Writer
 	def := tcell.StyleDefault.
-		Foreground(fgcol).
-		Background(bgcol)
+		Foreground(fgcol)
+		// .
+		// Background(bgcol)
 
 	tty, err := os.OpenFile("/dev/tty", os.O_WRONLY, 0)
 	//Will fail on windows, but tt is still mostly usable via tcell
